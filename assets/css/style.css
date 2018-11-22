@@ -63,3 +63,9 @@ footer  address {
  height: 85%;
  border-left: .3px solid darkgray;
 }
+
+/* Contact */
+.teams img {
+ padding: 0;
+ width: 16.666%;
+}
