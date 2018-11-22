@@ -33,8 +33,33 @@ body {
  overflow: hidden;
 }
 a .image-category img {
- filter: grayscale(100%)
+ filter: grayscale(100%);
+ transition: 1s;
 }
 a .image-category img:hover {
- filter: none
+ filter: none;
+}
+
+/* Footer */
+footer  address {
+ font-size: 7px;
+ margin-bottom: 0
+}
+
+/* Responsive */
+@media screen and (max-width : 360px) {
+ footer  address {
+  display : none
+ }
+}
+@media screen and (max-width : 1440px) {
+ body {
+  
+ }
+}
+
+/* about */
+.vr {
+ height: 85%;
+ border-left: .3px solid darkgray;
 }
