@@ -40,9 +40,34 @@ a .image-category img:hover {
  filter: none;
 }
 
+/* about page */
+h3, p.text-muted {
+ margin-bottom: 5px
+}
+
+div.about {
+ font-size: 10px;
+}
+
+div.about p {
+ margin-bottom: 5px
+}
+
+ul.list-award {
+ list-style-type: none;
+ font-size: 10px;
+ padding: 0 15px
+}
+
+ul.list-award > li::before {
+ content: '-';
+ position: absolute;
+ margin-left: -15px
+}
+
 /* Footer */
 footer  address {
- font-size: 7px;
+ font-size: 8px;
  margin-bottom: 0
 }
 
@@ -65,7 +90,64 @@ footer  address {
 }
 
 /* Contact */
-.teams img {
+.table-teams img {
  padding: 0;
  width: 100%;
+}
+
+/* project list */
+.padding-15 {
+ padding: .15rem!important;
+}
+.post1, .post2, .post3 {
+ height: 100%;
+ overflow: hidden;
+}
+.caption {
+ position: absolute;
+ bottom: 25px;
+ padding: 10px;
+ background-color: rgba(255, 255, 255, .8);
+}
+.post2 .caption {
+ bottom: 20px
+}
+.post3 .caption {
+ bottom: 10px
+}
+.caption h5, .caption h6 {
+ margin-bottom: 0px
+}
+table.detail {
+ font-size: 8px
+}
+.post3 .caption .detail {
+ display: none
+}
+/* pagination project list */
+.category, .paginations {
+ background-color: #444444;
+ padding: 0 5px;
+ color: white;
+ border: 1px solid black;
+}
+.category {
+ width: 75%;
+}
+.paginations {
+ width: 25%
+}
+.paginations {
+ background-color: #999999;
+ border-radius: 0;
+ margin: 0
+}
+ul.paginations {
+ margin: 0!important
+}
+.paginations a {
+ color: white
+}
+.paginations a:hover {
+ color: lightblue
 }
