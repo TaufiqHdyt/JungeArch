@@ -12,12 +12,12 @@ body {
 /* ================================================== */
 /* Carousel */
 .carousel-indicators {
- bottom: -28px;
+ bottom: -13px;
+ margin: 0;
 }
 .carousel-indicators li {
- width: 7.5px;
- height: 7.5px;
- border-radius: 50%;
+ width: 10px;
+ height: 10px;
  background-color: rgba(181, 181, 181, 1)
 }
 .carousel-indicators .active {
@@ -73,22 +73,6 @@ ul.list-award > li::before {
 footer  address {
  font-size: 8px;
  margin-bottom: 0
-}
-
-/* ===================================================== */
-/* Responsive */
-@media screen and (max-width : 425px) {
- footer  address {
-  display : none
- }
-}
-@media screen and (max-width : 1440px) {
- body {
-  
- }
-}
-.custom-control-inline {
- margin-right: 0;
 }
 
 /* ===================================================== */
@@ -199,4 +183,20 @@ div.details {
 }
 div.article {
  font-size: 10px
+}
+
+/* ===================================================== */
+/* Responsive */
+@media screen and (max-width : 425px) {
+ footer address {
+  display: none
+ }
+}
+
+@media screen and (max-width : 1440px) {
+ 
+}
+
+.custom-control-inline {
+ margin-right: 0;
 }
