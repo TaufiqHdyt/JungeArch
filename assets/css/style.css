@@ -27,6 +27,12 @@ body {
  width: 5%
 }
 
+div.img-crsl {
+ object-fit: fill;
+ height: 510px;
+ overflow: hidden;
+}
+
 /* =============================================== */
 /* image category */
 .image-category {
