@@ -9,7 +9,7 @@
 body {
  font-family: 'Montserrat', sans-serif;
 }
-
+/* ================================================== */
 /* Carousel */
 .carousel-indicators {
  bottom: -28px;
@@ -27,6 +27,7 @@ body {
  width: 5%
 }
 
+/* =============================================== */
 /* image category */
 .image-category {
  width: 100%;
@@ -40,15 +41,17 @@ a .image-category img:hover {
  filter: none;
 }
 
+/* =============================================== */
 /* about page */
-h3, p.text-muted {
- margin-bottom: 5px
+div.profil h3, div.profil p.text-muted {
+ margin-bottom: 0px
 }
-
+div.profil p.text.muted {
+ font-size: 8px
+}
 div.about {
- font-size: 10px;
+ font-size: 9px;
 }
-
 div.about p {
  margin-bottom: 5px
 }
@@ -65,12 +68,14 @@ ul.list-award > li::before {
  margin-left: -15px
 }
 
+/* ==================================================== */
 /* Footer */
 footer  address {
  font-size: 8px;
  margin-bottom: 0
 }
 
+/* ===================================================== */
 /* Responsive */
 @media screen and (max-width : 425px) {
  footer  address {
@@ -82,7 +87,11 @@ footer  address {
   
  }
 }
+.custom-control-inline {
+ margin-right: 0;
+}
 
+/* ===================================================== */
 /* about */
 .vr {
  height: 85%;
@@ -95,11 +104,13 @@ footer  address {
  width: 100%;
 }
 
+/* ===================================================== */
 /* project list */
 .padding-15 {
  padding: .15rem!important;
 }
 .post1, .post2, .post3 {
+ object-fit: fill;
  height: 100%;
  overflow: hidden;
 }
@@ -119,7 +130,14 @@ footer  address {
  margin-bottom: 0px
 }
 table.detail {
- font-size: 8px
+ font-size: 8px;
+ margin-top: 3px
+}
+.post3 .caption h5 {
+ font-size: 14px
+}
+.post3 .caption h6 {
+ font-size: 11px
 }
 .post3 .caption .detail {
  display: none
@@ -150,4 +168,35 @@ ul.paginations {
 }
 .paginations a:hover {
  color: lightblue
+}
+
+/* ===================================================== */
+/* post detail */
+/* img right */
+.preview {
+ object-fit: fill;
+ height: 450px;
+ overflow: hidden;
+}
+.thumb {
+ height: 50px
+}
+.thumb img {
+ filter: grayscale(100);
+ cursor: pointer;
+ transition: .5s;
+}
+.thumb img:hover {
+ filter: none;
+}
+.thumb img.selected {
+ filter: none;
+}
+/* text left */
+div.details {
+ font-size: 10px;
+ margin-bottom: 5px
+}
+div.article {
+ font-size: 10px
 }
