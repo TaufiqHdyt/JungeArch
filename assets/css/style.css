@@ -33,7 +33,7 @@ body {
  z-index: 999999;
  background-color: #444444;
  text-align: center;
- animation: hideintro 6s 5.5s ease forwards;
+ animation: hideintro 5.5s 5.5s ease forwards;
 }
 
 /* Carousel */
