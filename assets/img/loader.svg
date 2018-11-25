@@ -4,35 +4,36 @@
    .fill{
     fill:#ffffff;
    }
-   @keyframes fade {
+   @keyframes mlebu {
     0% { opacity: 0; }
     25% { opacity: 0; }
     50% { opacity: 1; }
+    80% { opacity: 1; }
     100% { opacity: 1; }
    }
    #i {
     opacity:0;
-    animation: fade 5s 1s ease;
+    animation: mlebu 5s 1s ease;
     animation-fill-mode:forwards
    }
    #j {
     opacity:0;
-    animation: fade 5s 2s ease;
+    animation: mlebu 5s 2s ease;
     animation-fill-mode:forwards
    }
    #a {
     opacity:0;
-    animation: fade 5s 3s ease;
+    animation: mlebu 5s 3s ease;
     animation-fill-mode:forwards
    }
    #ja {
     opacity:0;
-    animation: fade 5s 4s ease;
+    animation: mlebu 5s 4s ease;
     animation-fill-mode:forwards
    }
    #s {
     opacity:0;
-    animation: fade 5s 5s ease;
+    animation: mlebu 5s 4.5s ease;
     animation-fill-mode:forwards
    }
   </style>
