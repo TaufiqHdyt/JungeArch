@@ -67,8 +67,9 @@ div.carousel-caption {
 /* =============================================== */
 /* image category */
 .image-category {
- width: 100%;
- overflow: hidden;
+  object-fit: fill;
+  height: 100%;
+  overflow: hidden;
 }
 a .image-category img {
  filter: grayscale(100%);
@@ -225,13 +226,39 @@ div.article {
 /* ===================================================== */
 /* Responsive */
 @media screen and (max-width : 425px) {
+
+}
+@media screen and (max-width : 768px) {
  footer address {
   display: none
  }
+ .vr {
+  border-top: .3px solid darkgray;
+  border-left: none;
+  margin: 10px 0;
+  height: 25%
+ }
 }
-
+@media screen and (max-width : 992px) {
+ .cont-category {
+  height: 100%;
+ }
+ .project-categ {
+  height: 50%;
+ }
+ .contacts {
+  max-height: 100%
+ }
+}
+@media screen and (max-width : 1140px) {
+ .contacts {
+  height: 500px
+ }
+}
 @media screen and (max-width : 1440px) {
- 
+ .contacts {
+  height: 500px
+ }
 }
 
 .custom-control-inline {
