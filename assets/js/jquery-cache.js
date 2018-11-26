@@ -49,7 +49,7 @@
   }
 
   $(settings.showAgainSelector).on('click', showMessage);
-  $body.on('click', '.intro, .intro', hideMessage);
+  $body.on('click', '.intro, .intro-img', hideMessage);
 
  };
 
