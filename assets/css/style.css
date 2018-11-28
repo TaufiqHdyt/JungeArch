@@ -8,6 +8,10 @@
 
 body {
  font-family: 'Montserrat', sans-serif;
+ background-color: #dcdbdb
+}
+.container {
+ background-color: white
 }
 /* ================================================== */
 /* intro */
@@ -108,6 +112,10 @@ ul.list-award > li::before {
  margin-left: -15px
 }
 
+div.konten-kiri {
+ font-size: 14px
+}
+
 /* ==================================================== */
 /* Footer */
 footer  address {
@@ -119,7 +127,6 @@ footer  address {
 /* about */
 .vr {
  height: 85%;
- border-left: .3px solid darkgray;
 }
 
 /* Contact */
@@ -138,11 +145,16 @@ footer  address {
  height: 100%;
  overflow: hidden;
 }
+
 .caption {
  position: absolute;
  bottom: 25px;
  padding: 10px;
  background-color: rgba(255, 255, 255, .8);
+ color: #444444;
+}
+.caption h5:hover {
+ color: #007bff
 }
 .post2 .caption {
  bottom: 20px
@@ -235,7 +247,6 @@ div.article {
   display: none
  }
  .vr {
-  border-top: .3px solid darkgray;
   border-left: none;
   margin: 10px 0;
   height: 25%
@@ -258,15 +269,22 @@ div.article {
  }
 }
 @media screen and (max-width : 1980px) {
- .container.header {
-  padding-top: 50px
- }
  .contacts {
   height: 76vh
  }
- }
  .vr iframe {
   height: 100%
+ }
+}
+@media screen and (min-width: 1440px) {
+ .container.header {
+  margin-top: 75px
+ }
+ article.about, article.project-categ, article.project-detail {
+  height: 70vh
+ }
+ div.img-crsl {
+  height: 780px
  }
 }
 
