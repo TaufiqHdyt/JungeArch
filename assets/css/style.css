@@ -119,12 +119,16 @@ div.konten-kiri {
 /* ==================================================== */
 /* Footer */
 footer  address {
- font-size: 8px;
+ font-size: 10px;
  margin-bottom: 0
 }
 
 /* ===================================================== */
 /* about */
+.juduls {
+ background-color: #eaeaea;
+ padding: 2px 15px
+}
 .vr {
  height: 85%;
 }
