@@ -258,6 +258,9 @@ div.article {
  }
 }
 @media screen and (max-width : 1980px) {
+ .container.header {
+  padding-top: 50px
+ }
  .contacts {
   height: 76vh
  }
