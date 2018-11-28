@@ -282,9 +282,6 @@ div.article {
  }
 }
 @media screen and (max-width : 1980px) {
- .contacts {
-  height: 71vh
- }
  .vr iframe {
   height: 100%
  }
@@ -293,7 +290,7 @@ div.article {
  .container.header {
   margin-top: 65px
  }
- article.about, article.project-categ, article.project-detail {
+ article.about, article.project-categ, article.project-detail, article.contacts {
   height: 65vh
  }
  div.img-crsl {
