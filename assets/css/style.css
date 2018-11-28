@@ -88,10 +88,11 @@ a .image-category img:hover {
 /* =============================================== */
 /* about page */
 div.profil h3, div.profil p.text-muted {
- margin-bottom: 0px
+ margin-bottom: 0px;
+ font-size: 14px
 }
 div.profil p.text.muted {
- font-size: 8px
+
 }
 div.about {
  font-size: 9px;
@@ -99,7 +100,10 @@ div.about {
 div.about p {
  margin-bottom: 5px
 }
-
+div.pp {
+ height: 100%;
+ overflow: hidden;
+}
 ul.list-award {
  list-style-type: none;
  font-size: 10px;
@@ -127,7 +131,12 @@ footer  address {
 /* about */
 .juduls {
  background-color: #eaeaea;
- padding: 2px 15px
+ padding: 2px 15px;
+ margin: 0
+}
+.juduls h5 {
+ margin:0;
+ font-weight: bold
 }
 .vr {
  height: 85%;
@@ -274,7 +283,7 @@ div.article {
 }
 @media screen and (max-width : 1980px) {
  .contacts {
-  height: 76vh
+  height: 71vh
  }
  .vr iframe {
   height: 100%
