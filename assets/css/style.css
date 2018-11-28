@@ -74,7 +74,7 @@ div.carousel-caption {
 /* image category */
 .image-category {
   object-fit: fill;
-  height: 100%;
+  height: 365px;
   overflow: hidden;
 }
 a .image-category img {
@@ -83,6 +83,9 @@ a .image-category img {
 }
 a .image-category img:hover {
  filter: none;
+}
+.project-categ {
+ padding: 0 0.05rem
 }
 
 /* =============================================== */
@@ -136,7 +139,8 @@ footer  address {
 }
 .juduls h5 {
  margin:0;
- font-weight: bold
+ font-weight: bold;
+ font-size: 16px
 }
 .vr {
  height: 85%;
@@ -224,7 +228,7 @@ ul.paginations {
 /* img right */
 .preview {
  object-fit: fill;
- height: 450px;
+ height: 375px;
  overflow: hidden;
 }
 .thumb {
@@ -249,28 +253,39 @@ div.details {
 div.article {
  font-size: 10px
 }
+div.article.content p {
+ margin:0
+}
+ol.breadcrumb {
+ margin:0!important;
+ padding: 0;
+ font-weight: bold;
+ font-size: 16px
+}
 
 /* ===================================================== */
 /* Responsive */
 @media screen and (max-width : 425px) {
-
-}
-@media screen and (max-width : 768px) {
- footer address {
-  display: none
- }
  .vr {
   border-left: none;
   margin: 10px 0;
   height: 25%
  }
 }
+@media screen and (max-width : 768px) {
+ footer address {
+  display: none
+ }
+}
 @media screen and (max-width : 992px) {
+ .vr iframe {
+  height: 500px
+ }
  .cont-category {
   height: 100%;
  }
  .project-categ {
-  height: 50%;
+  height: 100%;
  }
  .contacts {
   max-height: 100%
@@ -281,9 +296,9 @@ div.article {
   height: 500px
  }
 }
-@media screen and (max-width : 1980px) {
+@media screen and (max-width : 1366px) {
  .vr iframe {
-  height: 100%
+  height: 400px
  }
 }
 @media screen and (min-width: 1440px) {
@@ -295,6 +310,12 @@ div.article {
  }
  div.img-crsl {
   height: 685px
+ }
+ div.preview {
+  height: 570px
+ }
+ div.image-category {
+  height: 535px
  }
 }
 
