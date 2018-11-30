@@ -196,33 +196,56 @@ table.detail {
  display: none
 }
 /* pagination project list */
-.category, .paginations {
- background-color: #444444;
+.pagination {
  padding: 0 5px;
- color: white;
- border: 1px solid black;
+ width: 100%
 }
-.category {
- width: 75%;
-}
-.paginations {
- width: 25%
-}
-.paginations {
- background-color: #999999;
+.pagination {
  border-radius: 0;
  margin: 0
 }
-ul.paginations {
+ul.pagination {
  margin: 0!important
 }
-.paginations a {
- color: white
-}
-.paginations a:hover {
- color: lightblue
+.page-link {
+ border: none
 }
 
+/* ===================================================== */
+div.project-grid {
+ padding: 0 0.5px
+}
+div.image-grid {
+ object-fit: fill;
+ height: 285px;
+ overflow: hidden
+}
+div.dtl {
+ font-size: 10px;
+ color: #444444;
+ text-decoration: none
+}
+div.dtl:hover {
+ text-decoration: none!important
+}
+.cont-grid a {
+ color: #444444;
+ text-decoration: none
+}
+.cont-grid a:hover {
+ color: #333333;
+ text-decoration: none
+}
+.marginside-15 {
+ margin: 0 15px
+}
+.image-grid img {
+ filter: grayscale(100);
+ transition: 0.5s
+}
+.image-grid img:hover {
+ filter: none
+}
 /* ===================================================== */
 /* post detail */
 /* img right */
@@ -330,6 +353,9 @@ ol.breadcrumb {
  }
  div.image-category {
   height: 535px
+ }
+ div.image-grid {
+  height: 480px
  }
 }
 
