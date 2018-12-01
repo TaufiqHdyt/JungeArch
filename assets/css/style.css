@@ -339,9 +339,18 @@ ol.breadcrumb {
   /* height: 400px */
  }
 }
+@media screen and (min-width: 325px) {
+ .preview {
+  height: 350px
+ }
+}
 @media screen and (min-width: 750px) {
- .vr {
-  height: 250px
+
+}
+@media screen and (min-width: 750px) {
+ div.article.content {
+  max-height: 260px;
+  overflow: auto
  }
 }
 @media screen and (min-width: 1140px) {
@@ -351,8 +360,11 @@ ol.breadcrumb {
  article.contacts {
   height: 470px
  }
+ div.preview {
+  height: 385px
+ }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1441px) {
  .container.header {
   margin-top: 65px
  }
@@ -366,7 +378,7 @@ ol.breadcrumb {
   height: 575px
  }
  div.preview {
-  height: 90%
+  height: 520px
  }
  .vr {
   height: 450px
@@ -379,6 +391,9 @@ ol.breadcrumb {
  }
  div.carousel-caption.atas {
   bottom: 20%
+ }
+ div.article.content {
+  max-height: 100%
  }
 }
 
