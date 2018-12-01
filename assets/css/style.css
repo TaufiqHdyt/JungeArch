@@ -74,7 +74,7 @@ div.carousel-caption.atas {
  width: auto;
  right: auto;
  background-color: rgba(255, 255, 255, .8);
- bottom: 30%
+ bottom: 25%
 }
 
 /* =============================================== */
@@ -263,9 +263,12 @@ div.dtl:hover {
 /* ===================================================== */
 /* post detail */
 /* img right */
+.image-slider {
+ height: 435px
+}
 .preview {
  object-fit: fill;
- height: 375px;
+ height: 90%;
  overflow: hidden;
 }
 .thumb {
@@ -359,8 +362,11 @@ ol.breadcrumb {
  div.img-crsl {
   height: 685px
  }
+ div.image-slider {
+  height: 575px
+ }
  div.preview {
-  height: 570px
+  height: 90%
  }
  .vr {
   height: 450px
@@ -372,7 +378,7 @@ ol.breadcrumb {
   height: 240px
  }
  div.carousel-caption.atas {
-  bottom: 23%
+  bottom: 20%
  }
 }
 
