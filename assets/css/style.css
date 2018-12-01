@@ -137,6 +137,10 @@ footer  address {
  margin-bottom: 0
 }
 
+a .fab:hover {
+ color: #007bff!important
+}
+
 /* ===================================================== */
 /* about */
 .juduls {
@@ -263,6 +267,9 @@ div.dtl:hover {
 /* ===================================================== */
 /* post detail */
 /* img right */
+li.breadcrumb-item a {
+ color: #444444
+}
 .image-slider {
  height: 435px
 }
