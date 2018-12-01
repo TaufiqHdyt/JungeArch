@@ -60,7 +60,7 @@ body {
 }
 div.img-crsl {
  object-fit: fill;
- height: 505px;
+ height: 530px;
  overflow: hidden;
 }
 div.carousel-caption {
@@ -68,6 +68,13 @@ div.carousel-caption {
  width: auto;
  right: auto;
  background-color: rgba(255, 255, 255, .8);
+}
+div.carousel-caption.atas {
+ left: 0;
+ width: auto;
+ right: auto;
+ background-color: rgba(255, 255, 255, .8);
+ bottom: 30%
 }
 
 /* =============================================== */
@@ -126,7 +133,7 @@ div.konten-kiri {
 /* ==================================================== */
 /* Footer */
 footer  address {
- font-size: 10px;
+ font-size: 9px;
  margin-bottom: 0
 }
 
@@ -230,7 +237,7 @@ div.dtl:hover {
  text-decoration: none!important
 }
 .cont-grid {
- font-size: 12px
+ font-size: 13px
 }
 .cont-grid a {
  color: #444444;
@@ -242,6 +249,9 @@ div.dtl:hover {
 }
 .marginside-15 {
  margin: 0 15px
+}
+.marginy-15 {
+ margin: 15px 0
 }
 .image-grid img {
  filter: grayscale(100);
@@ -336,7 +346,7 @@ ol.breadcrumb {
   height: 350px
  }
  article.contacts {
-  height: 440px
+  height: 470px
  }
 }
 @media screen and (min-width: 1440px) {
@@ -360,6 +370,9 @@ ol.breadcrumb {
  }
  div.image-grid {
   height: 240px
+ }
+ div.carousel-caption.atas {
+  bottom: 23%
  }
 }
 
