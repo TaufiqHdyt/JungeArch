@@ -205,7 +205,8 @@ table.detail {
  margin: 0
 }
 ul.pagination {
- margin: 0!important
+ margin: 0!important;
+ font-size: 12px
 }
 .page-link {
  border: none
@@ -217,7 +218,7 @@ div.project-grid {
 }
 div.image-grid {
  object-fit: fill;
- height: 285px;
+ height: 168px;
  overflow: hidden
 }
 div.dtl {
@@ -227,6 +228,9 @@ div.dtl {
 }
 div.dtl:hover {
  text-decoration: none!important
+}
+.cont-grid {
+ font-size: 12px
 }
 .cont-grid a {
  color: #444444;
