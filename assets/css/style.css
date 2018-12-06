@@ -16,16 +16,16 @@ body {
 /* ================================================== */
 /* intro */
 @keyframes hideintro {
-  0% { opacity: 1; }
-  20% { opacity: 1; }
-  50% { opacity: 1; }
-  80% { opacity: 0; }
-  99% { opacity: 0; }
-  100%  {
-   opacity: 0;
-   display: none;
-   visibility: hidden
-  }
+ 0% { opacity: 1; }
+ 20% { opacity: 1; }
+ 50% { opacity: 1; }
+ 80% { opacity: 0; }
+ 99% { opacity: 0; }
+ 100%  {
+  opacity: 0;
+  display: none;
+  visibility: hidden
+ }
 }
 .intro {
  position: absolute;
@@ -60,7 +60,7 @@ body {
 }
 div.img-crsl {
  object-fit: fill;
- height: 530px;
+ height: 510px;
  overflow: hidden;
 }
 div.carousel-caption {
@@ -78,11 +78,15 @@ div.carousel-caption.atas {
 }
 
 /* =============================================== */
+.container article {
+ text-align: justify
+}
+/* =============================================== */
 /* image category */
 .image-category {
-  object-fit: fill;
-  height: 365px;
-  overflow: hidden;
+ object-fit: fill;
+ height: 365px;
+ overflow: hidden;
 }
 a .image-category img {
  filter: grayscale(100%);
@@ -97,12 +101,12 @@ a .image-category img:hover {
 
 /* =============================================== */
 /* about page */
-div.profil h3, div.profil p.text-muted {
+div.profil h3, div.profil p {
  margin-bottom: 0px;
  font-size: 14px
 }
-div.profil p.text.muted {
-
+div.profil p {
+ margin-bottom: 0
 }
 div.about {
  font-size: 9px;
@@ -117,7 +121,8 @@ div.pp {
 ul.list-award {
  list-style-type: none;
  font-size: 10px;
- padding: 0 15px
+ padding: 0 15px;
+ margin:0
 }
 
 ul.list-award > li::before {
@@ -229,7 +234,7 @@ div.project-grid {
 }
 div.image-grid {
  object-fit: fill;
- height: 168px;
+ height: 160px;
  overflow: hidden
 }
 div.dtl {
@@ -271,7 +276,7 @@ li.breadcrumb-item a {
  color: #444444
 }
 .image-slider {
- height: 435px
+ height: 420px
 }
 .preview {
  object-fit: fill;
@@ -314,41 +319,41 @@ ol.breadcrumb {
 /* Responsive */
 @media screen and (max-width : 425px) {
  .vr iframe {
-  height: 250px
+ height: 250px
  }
 }
 @media screen and (max-width : 768px) {
  footer address {
-  display: none
+ display: none
  }
 }
 @media screen and (max-width : 992px) {
  /* .vr iframe {
-  height: 500px
+ height: 500px
  } */
  .cont-category {
-  height: 100%;
+ height: 100%;
  }
  .project-categ {
-  height: 100%;
+ height: 100%;
  }
  .contacts {
-  max-height: 100%
+ max-height: 100%
  }
 }
 @media screen and (max-width : 1140px) {
  .contacts {
-  height: 500px
+ height: 500px
  }
 }
 @media screen and (max-width : 1366px) {
  .vr iframe {
-  /* height: 400px */
+ /* height: 400px */
  }
 }
 @media screen and (min-width: 325px) {
  .preview {
-  height: 350px
+ height: 350px
  }
 }
 @media screen and (min-width: 750px) {
@@ -356,51 +361,51 @@ ol.breadcrumb {
 }
 @media screen and (min-width: 750px) {
  div.article.content {
-  max-height: 260px;
-  overflow: auto
+ max-height: 240px;
+ overflow: auto
  }
 }
 @media screen and (min-width: 1140px) {
  .vr {
-  height: 350px
+ height: 350px
  }
  article.contacts {
-  height: 470px
+ height: 450px
  }
  div.preview {
-  height: 385px
+ height: 365px
  }
 }
 @media screen and (min-width: 1441px) {
  .container.header {
-  margin-top: 65px
+ margin-top: 65px
  }
  article.about, article.project-categ, article.project-detail, article.contacts {
-  height: 65vh
+ height: 65vh
  }
  div.img-crsl {
-  height: 685px
+ height: 685px
  }
  div.image-slider {
-  height: 575px
+ height: 575px
  }
  div.preview {
-  height: 520px
+ height: 520px
  }
  .vr {
-  height: 450px
+ height: 450px
  }
  div.image-category {
-  height: 535px
+ height: 535px
  }
  div.image-grid {
-  height: 240px
+ height: 240px
  }
  div.carousel-caption.atas {
-  bottom: 20%
+ bottom: 20%
  }
  div.article.content {
-  max-height: 100%
+ max-height: 100%
  }
 }
 
