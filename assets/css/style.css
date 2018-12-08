@@ -27,7 +27,7 @@ body {
   visibility: hidden
  }
 }
-.intro {
+.intro#intros {
  position: absolute;
  top: 0;
  right: 0;
