@@ -410,6 +410,11 @@ ol.breadcrumb {
  max-height: 100%
  }
 }
+@media screen and (min-width : 1960px) {
+ .vr iframe {
+  height: 550px
+ }
+}
 
 .custom-control-inline {
  margin-right: 0;
