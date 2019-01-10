@@ -55,6 +55,24 @@
      </div>
      <div class="custom-control-inline py-1 px-0 w-100 img-thumbs">
       <div class="thumb">
+       <img src="assets/img/img (1).jpg" style="height:100%" onclick="select(this);" class="selectedIMG">
+      </div>
+      <div class="thumb">
+       <img src="assets/img/img (2).jpg" style="height:100%" onclick="select(this);">
+      </div>
+      <div class="thumb">
+       <img src="assets/img/img (3).jpg" style="height:100%" onclick="select(this);">
+      </div>
+      <div class="thumb">
+       <img src="assets/img/img (4).jpg" style="height:100%" onclick="select(this);">
+      </div>
+      <div class="thumb">
+       <img src="assets/img/img (3).jpg" style="height:100%" onclick="select(this);">
+      </div>
+      <div class="thumb">
+       <img src="assets/img/img (2).jpg" style="height:100%" onclick="select(this);">
+      </div>
+      <div class="thumb">
        <img src="assets/img/img (1).jpg" style="height:100%" onclick="select(this);">
       </div>
       <div class="thumb">
@@ -67,28 +85,13 @@
        <img src="assets/img/img (4).jpg" style="height:100%" onclick="select(this);">
       </div>
       <div class="thumb">
-       <img src="assets/img/img (4).jpg" style="height:100%" onclick="select(this);">
+       <img src="assets/img/img (3).jpg" style="height:100%" onclick="select(this);">
       </div>
       <div class="thumb">
-       <img src="assets/img/img (4).jpg" style="height:100%" onclick="select(this);">
+       <img src="assets/img/img (2).jpg" style="height:100%" onclick="select(this);">
       </div>
       <div class="thumb">
-       <img src="assets/img/img (4).jpg" style="height:100%" onclick="select(this);">
-      </div>
-      <div class="thumb">
-       <img src="assets/img/img (4).jpg" style="height:100%" onclick="select(this);">
-      </div>
-      <div class="thumb">
-       <img src="assets/img/img (4).jpg" style="height:100%" onclick="select(this);">
-      </div>
-      <div class="thumb">
-       <img src="assets/img/img (4).jpg" style="height:100%" onclick="select(this);">
-      </div>
-      <div class="thumb">
-       <img src="assets/img/img (4).jpg" style="height:100%" onclick="select(this);">
-      </div>
-      <div class="thumb">
-       <img src="assets/img/img (4).jpg" style="height:100%" onclick="select(this);">
+       <img src="assets/img/img (1).jpg" style="height:100%" onclick="select(this);">
       </div>
      </div>
     </div>
@@ -153,6 +156,10 @@
    var expandImg = document.getElementById("expandedImg");
    expandImg.src = imgs.src;
   }
+  $('img').click(function () {
+   $('.thumb img').removeClass('selectedIMG');
+   $(this).toggleClass('selectedIMG');
+  });
  </script>
 </body>
 
