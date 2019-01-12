@@ -10,6 +10,7 @@
  <link rel="stylesheet" href="assets/css/bootstrap.css" />
  <link rel="stylesheet" href="assets/css/style.css" />
  <link rel="stylesheet" href="assets/css/all.min.css" />
+ <link rel="stylesheet" href="assets/css/lightslider.min.css" />
 
  <title>Junge Architect</title>
 </head>
@@ -50,6 +51,25 @@
    <div class="row h-100 mx-0 d-flex padding-15 justify-content-between">
     <div class="col-lg-8 col-12 order-first order-lg-last text-center image-slider">
      <div class="preview">
+      <ul id="lightSlider" class="mx-auto">
+       <li data-thumb="assets/img/img (1).jpg">
+        <img src="assets/img/img (1).jpg" style="object-fit: cover;width: 100%;height: 100%" alt="" srcset="" />
+       </li>
+       <li data-thumb="assets/img/img (2).jpg">
+        <img src="assets/img/img (2).jpg" style="object-fit: cover;width: 100%;height: 100%" alt="" srcset="" />
+       </li>
+       <li data-thumb="assets/img/img (3).jpg">
+        <img src="assets/img/img (3).jpg" style="object-fit: cover;width: 100%;height: 100%" alt="" srcset="" />
+       </li>
+       <li data-thumb="assets/img/img (4).jpg">
+        <img src="assets/img/img (4).jpg" style="object-fit: cover;width: 100%;height: 100%" alt="" srcset="" />
+       </li>
+       <li data-thumb="assets/img/img (3).jpg">
+        <img src="assets/img/img (3).jpg" style="object-fit: cover;width: 100%;height: 100%" alt="" srcset="" />
+       </li>
+      </ul>
+     </div>
+<!-- <div class="preview">
       <img id="expandedImg" src="assets/img/img (1).jpg" style="object-fit: cover;width: 100%;height: 100%">
       <div id="imgtext"></div>
      </div>
@@ -93,7 +113,7 @@
       <div class="thumb">
        <img src="assets/img/img (1).jpg" style="height:100%" onclick="select(this);">
       </div>
-     </div>
+     </div> -->
     </div>
     <div class="col-lg-4 col-12 order-last order-lg-first">
      <div class="judul-artikel">
@@ -149,8 +169,9 @@
  <!-- Optional JavaScript -->
  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
  <script src="assets/js/jquery-3.3.1.slim.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+ <script src="assets/js/popper.min.js"></script>
  <script src="assets/js/bootstrap.min.js"></script>
+ <script src="assets/js/lightslider.min.js"></script>
  <script>
   function select(imgs) {
    var expandImg = document.getElementById("expandedImg");
@@ -159,6 +180,13 @@
   $('img').click(function () {
    $('.thumb img').removeClass('selectedIMG');
    $(this).toggleClass('selectedIMG');
+  });
+  $('#lightSlider').lightSlider({
+   gallery: true,
+   item: 1,
+   loop: true,
+   slideMargin: 0,
+   thumbItem: 9
   });
  </script>
 </body>

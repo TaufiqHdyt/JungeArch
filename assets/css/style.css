@@ -278,80 +278,40 @@ li.breadcrumb-item a {
 .preview {
  object-fit: fill;
  height: 90%;
- overflow: hidden;
+ /* overflow: hidden; */
 }
-.thumb {
- height: 50px
+.preview ul li {
+ height: 370px
 }
-.thumb img {
- filter: grayscale(100);
- cursor: pointer;
- transition: .5s;
-}
-.thumb img:hover {
- filter: none;
-}
-.thumb img.selected {
- filter: none;
-}
-.img-thumbs {
- overflow-x: scroll
-}
-img.selectedIMG {
+
+img.active {
  filter: none!important
 }
-/* Control IMG */
-.img-control-prev,
-.img-control-next {
- position: absolute;
- top: 0;
- bottom: 0;
- display: -ms-flexbox;
- display: flex;
- -ms-flex-align: center;
- align-items: center;
- -ms-flex-pack: center;
- justify-content: center;
- width: 10%;
- color: #fff;
- text-align: center;
- opacity: 0.5;
+
+/* lightSlider */
+ul {
+ list-style: none outside none;
+ padding-left: 0;
+ margin-bottom: 0;
 }
 
-.img-control-prev:hover,
-.img-control-prev:focus,
-.img-control-next:hover,
-.img-control-next:focus {
- color: #fff;
- text-decoration: none;
- outline: 0;
- opacity: .9;
+li {
+ display: block;
+ float: left;
+ margin-right: 6px;
+ cursor: pointer;
+}
+.lSPager.lSGallery {
+ height: 77px
+}
+.lSPager.lSGallery li {
+ filter: grayscale(100);
+ transition: .5s
+}
+.lSSlideOuter .lSPager.lSGallery li.active, .lSSlideOuter .lSPager.lSGallery li:hover {
+ filter: none
 }
 
-.img-control-prev {
- left: 0;
-}
-
-.img-control-next {
- right: 0;
-}
-
-.img-control-prev-icon,
-.img-control-next-icon {
- display: inline-block;
- width: 20px;
- height: 20px;
- background: transparent no-repeat center center;
- background-size: 100% 100%;
-}
-
-.img-control-prev-icon {
- background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
-}
-
-.img-control-next-icon {
- background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
-}
 /* text left */
 div.details {
  font-size: 10px;
@@ -446,8 +406,8 @@ ol.breadcrumb {
  div.img-crsl {
  height: 685px
  }
- div.image-slider {
- height: 575px
+ .preview ul li {
+  height: 525px
  }
  div.preview {
  height: 520px
