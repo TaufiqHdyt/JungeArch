@@ -280,7 +280,7 @@ li.breadcrumb-item a {
  height: 90%;
  /* overflow: hidden; */
 }
-.preview ul li {
+.preview ul.lightSlider li {
  height: 370px
 }
 
@@ -406,7 +406,7 @@ ol.breadcrumb {
  div.img-crsl {
  height: 685px
  }
- .preview ul li {
+ .preview ul.lightSlider li {
   height: 525px
  }
  div.preview {
