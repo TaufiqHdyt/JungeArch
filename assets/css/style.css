@@ -289,13 +289,13 @@ img.active {
 }
 
 /* lightSlider */
-ul {
+ul.lSPager.lSGallery {
  list-style: none outside none;
  padding-left: 0;
  margin-bottom: 0;
 }
 
-li {
+ul.lSPager.lSGallery li {
  display: block;
  float: left;
  margin-right: 6px;
