@@ -1,0 +1,14 @@
+:root {
+  --canvas: #eeeee9;
+  --surface: #f8f8f4;
+  --ink: #10120f;
+  --muted: #666a63;
+  --line: rgba(16, 18, 15, 0.18);
+  --accent: #c8ff36;
+  --font-display: Arial, Helvetica, sans-serif;
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-meta: Arial, Helvetica, sans-serif;
+  --page: clamp(1rem, 4vw, 4.5rem);
+  --section: clamp(5rem, 11vw, 10rem);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

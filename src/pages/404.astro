@@ -1,0 +1,12 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+const base = import.meta.env.BASE_URL === "/" ? "/" : `${import.meta.env.BASE_URL}/`;
+---
+<BaseLayout title="Page not found — Junge Architekt" description="The requested page could not be found.">
+  <section class="not-found shell">
+    <p class="eyebrow">Error 404</p>
+    <h1 class="display">Lost in<br />space.</h1>
+    <a class="link-arrow" href={base}>Return home</a>
+  </section>
+</BaseLayout>
+<style>.not-found { min-height: 70vh; padding-block: var(--section); }.not-found .link-arrow { margin-top: 4rem; }</style>

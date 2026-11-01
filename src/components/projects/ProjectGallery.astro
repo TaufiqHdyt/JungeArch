@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+type GalleryItem = { image: ImageMetadata; alt: string };
+type Gallery = GalleryItem[];
+interface Props { images: Gallery; }
+const { images } = Astro.props;
+---
+{images.length > 0 && (
+  <section class="gallery shell" aria-labelledby="gallery-title">
+    <h2 id="gallery-title" class="sr-only">Project gallery</h2>
+    {images.map((item: GalleryItem, index: number) => (
+      <button class:list={["frame", index % 3 === 0 && "frame--wide"]} type="button" data-gallery-index={index} aria-label={`Open image ${index + 1} of ${images.length}`}>
+        <Image src={item.image} alt={item.alt} widths={[640, 960, 1440, 1920]} sizes={index % 3 === 0 ? "100vw" : "(min-width: 700px) 50vw, 100vw"} />
+      </button>
+    ))}
+    <dialog class="lightbox" aria-label="Project image viewer">
+      <button class="close" type="button" aria-label="Close image viewer">Close ×</button>
+      <img src="" alt="" />
+    </dialog>
+  </section>
+)}
+<script>
+  function setupGallery() {
+    const dialog = document.querySelector<HTMLDialogElement>(".lightbox");
+    const output = dialog?.querySelector<HTMLImageElement>("img");
+    document.querySelectorAll<HTMLButtonElement>("[data-gallery-index]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const source = button.querySelector<HTMLImageElement>("img");
+        if (!dialog || !output || !source) return;
+        output.src = source.currentSrc || source.src;
+        output.alt = source.alt;
+        dialog.showModal();
+      });
+    });
+    dialog?.querySelector(".close")?.addEventListener("click", () => dialog.close());
+    dialog?.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+  }
+  document.addEventListener("astro:page-load", setupGallery);
+</script>
+<style>
+  .gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; padding-bottom: var(--section); }
+  .frame { display: block; padding: 0; border: 0; color: var(--ink); background-color: #d7d7d1; cursor: zoom-in; aspect-ratio: 4 / 5; overflow: hidden; }
+  .frame--wide { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+  .frame :global(img) { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
+  .frame:hover :global(img) { transform: scale(1.015); }
+  .lightbox { width: 100vw; max-width: none; height: 100vh; max-height: none; padding: 4rem; border: 0; background: rgba(10, 11, 9, .96); color: white; }
+  .lightbox::backdrop { background: rgba(10, 11, 9, .96); }
+  .lightbox img { width: 100%; height: 100%; object-fit: contain; }
+  .close { position: fixed; z-index: 2; top: 1rem; right: 1rem; padding: .65rem 1rem; border: 1px solid var(--surface); color: var(--ink); background-color: var(--surface); cursor: pointer; }
+  .close:hover { color: var(--surface); background-color: transparent; }
+  @media (max-width: 700px) { .gallery { grid-template-columns: 1fr; } .frame--wide { grid-column: auto; aspect-ratio: 4 / 5; } .lightbox { padding: 3.5rem .75rem .75rem; } }
+</style>

@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ProjectCard from "@/components/projects/ProjectCard.astro";
+type Project = CollectionEntry<"projects">;
+const projects: Project[] = await getCollection("projects");
+projects.sort((a: Project, b: Project) => a.data.order - b.data.order);
+const availableCategories = [...new Set(projects.map((project: Project) => project.data.category))];
+const categories = ["all", ...availableCategories];
+---
+<BaseLayout title="Projects — Junge Architekt" description="Selected residential, commercial, and interior architecture by Junge Architekt.">
+  <header class="page-head shell">
+    <p class="eyebrow">Archive · {String(projects.length).padStart(2, "0")} projects</p>
+    <h1 class="display">Selected<br />projects.</h1>
+  </header>
+  <div class="filters shell" role="group" aria-label="Filter projects">
+    {categories.map((category) => <button type="button" data-filter={category} aria-pressed={category === "all"}>{category}</button>)}
+  </div>
+  <section class="grid shell" aria-live="polite">
+    {projects.map((project: Project, index: number) => <ProjectCard project={project} index={index} />)}
+  </section>
+</BaseLayout>
+<script>
+  function setupFilters() {
+    const buttons = document.querySelectorAll<HTMLButtonElement>("[data-filter]");
+    const cards = document.querySelectorAll<HTMLElement>("[data-category]");
+    buttons.forEach((button) => button.addEventListener("click", () => {
+      const value = button.dataset.filter;
+      buttons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+      cards.forEach((card) => { card.hidden = value !== "all" && card.dataset.category !== value; });
+    }));
+  }
+  document.addEventListener("astro:page-load", setupFilters);
+</script>
+<style>
+  .page-head { padding-block: clamp(4rem, 10vw, 9rem); }
+  .filters { display: flex; gap: .5rem; flex-wrap: wrap; padding-bottom: 2rem; }
+  .filters button { padding: .7rem 1rem; border: 1px solid var(--line); border-radius: 99px; color: var(--ink); background-color: transparent; font-family: var(--font-meta); font-size: .64rem; letter-spacing: .07em; text-transform: uppercase; cursor: pointer; transition: color .2s ease, background-color .2s ease, border-color .2s ease; }
+  .filters button[aria-pressed="true"] { color: var(--surface); border-color: var(--ink); background-color: var(--ink); }
+  @media (hover: hover) { .filters button:not([aria-pressed="true"]):hover { border-color: var(--ink); background-color: rgba(16, 18, 15, .06); } }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(3rem, 8vw, 8rem) .5rem; padding-bottom: var(--section); }
+  .grid :global([hidden]) { display: none; }
+  @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+</style>

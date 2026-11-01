@@ -1,0 +1,34 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+<BaseLayout title="Contact — Junge Architekt" description="Start a project with Junge Architekt in Yogyakarta, Indonesia.">
+  <header class="page-head shell">
+    <p class="eyebrow">New projects · Collaborations</p>
+    <h1 class="display">Let’s create<br />what’s next.</h1>
+  </header>
+  <section class="contact shell section">
+    <div class="primary">
+      <p class="eyebrow">Get in touch</p>
+      <a href="mailto:jungearchitekts@gmail.com">jungearchitekts<br />@gmail.com ↗</a>
+    </div>
+    <div class="details">
+      <div><p class="eyebrow">Call</p><a href="tel:+6281238197688">+62 812 3819 7688</a></div>
+      <div><p class="eyebrow">Visit</p><address>Jl. Sunan Muria, Jaban<br />Sinduharjo, Ngaglik, Sleman<br />Yogyakarta 55581, Indonesia</address></div>
+      <div><p class="eyebrow">Map</p><a class="link-arrow" href="https://maps.google.com/?q=Junge+Architekt+Studio" target="_blank" rel="noreferrer">Open Google Maps</a></div>
+    </div>
+  </section>
+  <section class="availability shell">
+    <span></span><p>Currently accepting selected architecture and interior projects.</p>
+  </section>
+</BaseLayout>
+<style>
+  .page-head { padding-block: clamp(5rem, 11vw, 10rem); }
+  .contact { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; border-top: 1px solid var(--line); }
+  .primary > a { display: inline-block; font-family: var(--font-display); font-size: clamp(2.1rem, 5vw, 5.5rem); font-weight: 500; line-height: .98; letter-spacing: -.055em; text-decoration: none; }
+  .details { display: grid; gap: 3rem; }
+  .details a, address { font-style: normal; text-decoration: none; }
+  .availability { display: flex; gap: 1rem; align-items: center; padding-block: 2rem; border-top: 1px solid var(--line); }
+  .availability span { width: .65rem; height: .65rem; border-radius: 50%; background: #6ecb45; box-shadow: 0 0 0 .3rem rgba(110,203,69,.18); }
+  .availability p { margin: 0; font-family: var(--font-meta); font-size: .66rem; text-transform: uppercase; letter-spacing: .07em; }
+  @media (max-width: 760px) { .contact { grid-template-columns: 1fr; } }
+</style>

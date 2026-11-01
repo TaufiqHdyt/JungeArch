@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import portrait from "@/assets/studio/sigit-pramana-putra.jpg";
+const awards = [
+  "First place, CAD Design Competition — school and district levels, 2010",
+  "Second place, CAD Design Competition — provincial level, 2010",
+  "Second place, Information Technology Competition, 2011",
+  "Best 10, WEX UGM Design Competition, 2013",
+  "Third place, Competition for Rural Sustainability, Ministry of Public Works, 2013",
+  "Most Outstanding Student, Yogyakarta University of Technology, 2014",
+  "Best 6, Ide Hijau Untuk Semua, Open Arch Fest, 2014",
+  "Finalist, MAWAPRES Kopertis Region V, 2014",
+];
+---
+<BaseLayout title="Studio — Junge Architekt" description="Junge Architekt is a Yogyakarta architecture studio led by Sigit Pramana Putra.">
+  <header class="page-head shell">
+    <p class="eyebrow">Studio · Yogyakarta</p>
+    <h1 class="display">Local insight.<br />Future form.</h1>
+  </header>
+  <section class="manifesto shell section">
+    <p class="eyebrow">Our approach</p>
+    <p class="lede">Junge Architekt works between architecture, construction, and the Indonesian landscape. We pursue clear ideas, honest materials, and spaces that become richer through use.</p>
+  </section>
+  <section class="profile shell section">
+    <div class="portrait"><Image src={portrait} alt="Sigit Pramana Putra, principal architect at Junge Architekt" widths={[480, 720, 960]} sizes="(min-width: 800px) 40vw, 100vw" /></div>
+    <div class="bio">
+      <p class="eyebrow">Principal architect</p>
+      <h2>Sigit Pramana Putra</h2>
+      <p>Sigit is an architect and educator whose work explores climate-responsive space, contemporary craft, and the relationship between building and everyday life.</p>
+      <p>He completed his undergraduate architecture studies at Yogyakarta University of Technology and continued to a master’s program at the Islamic University of Indonesia.</p>
+    </div>
+  </section>
+  <section class="awards shell section">
+    <p class="eyebrow">Selected recognition</p>
+    <ol>{awards.map((award, index) => <li><span>{String(index + 1).padStart(2, "0")}</span>{award}</li>)}</ol>
+  </section>
+</BaseLayout>
+<style>
+  .page-head { padding-block: clamp(5rem, 11vw, 10rem); }
+  .manifesto { display: grid; grid-template-columns: 1fr 3fr; border-top: 1px solid var(--line); }
+  .manifesto .lede { margin: 0; }
+  .profile { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 8vw, 8rem); background: var(--ink); color: var(--surface); }
+  .portrait { min-height: 42rem; }
+  .portrait :global(img) { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); }
+  .bio { align-self: end; padding-bottom: 2rem; }
+  .bio h2 { margin: 0 0 3rem; font-size: clamp(2.5rem, 6vw, 6rem); line-height: .92; letter-spacing: -.055em; font-weight: 600; }
+  .bio p:not(.eyebrow) { max-width: 34rem; font-size: 1.08rem; line-height: 1.6; }
+  .awards { display: grid; grid-template-columns: 1fr 3fr; }
+  ol { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+  li { display: grid; grid-template-columns: 4rem 1fr; padding: 1.2rem 0; border-bottom: 1px solid var(--line); }
+  li span { color: var(--muted); font-family: var(--font-meta); font-size: .64rem; }
+  @media (max-width: 760px) { .manifesto, .profile, .awards { grid-template-columns: 1fr; } .manifesto, .awards { gap: 2rem; } .portrait { min-height: 32rem; } }
+</style>

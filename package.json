@@ -1,0 +1,27 @@
+{
+  "name": "junge-arch",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "pnpm check && ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "check": "pnpm lint && pnpm format:check && ASTRO_TELEMETRY_DISABLED=1 astro check",
+    "format": "oxfmt src public package.json astro.config.mjs tsconfig.json pnpm-workspace.yaml README.md .github",
+    "format:check": "oxfmt --check src public package.json astro.config.mjs tsconfig.json pnpm-workspace.yaml README.md .github",
+    "lint": "oxlint src --deny-warnings"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "latest",
+    "astro": "latest",
+    "sharp": "latest"
+  },
+  "devDependencies": {
+    "@astrojs/check": "latest",
+    "oxfmt": "latest",
+    "oxlint": "latest",
+    "typescript": "^6.0.0"
+  },
+  "packageManager": "pnpm@12.3.3"
+}

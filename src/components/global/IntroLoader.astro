@@ -1,0 +1,63 @@
+---
+const base = import.meta.env.BASE_URL === "/" ? "/" : `${import.meta.env.BASE_URL}/`;
+---
+
+<div class="intro-loader" data-intro-loader role="status" aria-label="Loading Junge Architekt">
+  <img src={`${base}loader.svg`} alt="" width="222" height="269" />
+</div>
+
+<script is:inline define:vars={{ cookiePath: base }}>
+  (() => {
+    const loader = document.querySelector("[data-intro-loader]");
+    if (!loader) return;
+
+    const cookieName = "junge_intro_seen";
+    const maxAge = 12 * 60;
+    const hasSeenIntro = document.cookie
+      .split("; ")
+      .some((cookie) => cookie.startsWith(`${cookieName}=`));
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducedMotion || hasSeenIntro) {
+      loader.remove();
+      return;
+    }
+
+    const expires = new Date(Date.now() + maxAge * 1000).toUTCString();
+    const secure = location.protocol === "https:" ? "; Secure" : "";
+    document.cookie = `${cookieName}=1; Max-Age=${maxAge}; Expires=${expires}; Path=${cookiePath}; SameSite=Lax${secure}`;
+
+    document.documentElement.setAttribute("data-intro-open", "");
+    loader.setAttribute("data-active", "");
+
+    window.setTimeout(() => {
+      loader.addEventListener("transitionend", () => loader.remove(), { once: true });
+      loader.removeAttribute("data-active");
+      document.documentElement.removeAttribute("data-intro-open");
+    }, 10000);
+  })();
+</script>
+
+<style>
+  .intro-loader {
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    visibility: hidden;
+    opacity: 0;
+    background: #10120f;
+    transition:
+      opacity 700ms var(--ease),
+      visibility 700ms;
+  }
+  .intro-loader[data-active] {
+    visibility: visible;
+    opacity: 1;
+  }
+  .intro-loader img {
+    width: clamp(7rem, 18vw, 13rem);
+    height: auto;
+  }
+</style>

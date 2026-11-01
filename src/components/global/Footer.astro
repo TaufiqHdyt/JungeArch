@@ -1,0 +1,28 @@
+---
+const base = import.meta.env.BASE_URL === "/" ? "/" : `${import.meta.env.BASE_URL}/`;
+---
+<footer class="footer shell">
+  <div class="mark">JUNGE<br />ARCHITEKT</div>
+  <div>
+    <p class="eyebrow">Visit</p>
+    <address>Jl. Sunan Muria, Jaban<br />Sleman, Yogyakarta 55581<br />Indonesia</address>
+  </div>
+  <div>
+    <p class="eyebrow">Contact</p>
+    <a href="mailto:jungearchitekts@gmail.com">jungearchitekts@gmail.com</a><br />
+    <a href="tel:+6281238197688">+62 812 3819 7688</a>
+  </div>
+  <div class="end">
+    <a href={`${base}projects`}>Selected work ↗</a>
+    <p>© {new Date().getFullYear()} Junge Architekt</p>
+  </div>
+</footer>
+<style>
+  .footer { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; padding-block: 4rem 2rem; background: var(--ink); color: var(--surface); }
+  .mark { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 4.5rem); font-weight: 700; letter-spacing: -.065em; line-height: .84; }
+  address { font-style: normal; }
+  a { text-decoration: none; }
+  .end { display: flex; flex-direction: column; justify-content: space-between; text-align: right; }
+  .end p { color: #999d95; font-size: .75rem; }
+  @media (max-width: 800px) { .footer { grid-template-columns: 1fr 1fr; } .mark, .end { grid-column: 1 / -1; } .end { gap: 3rem; text-align: left; } }
+</style>

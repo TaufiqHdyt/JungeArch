@@ -1,0 +1,53 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ProjectCard from "@/components/projects/ProjectCard.astro";
+
+type Project = CollectionEntry<"projects">;
+const projects: Project[] = await getCollection("projects");
+projects.sort((a: Project, b: Project) => a.data.order - b.data.order);
+const hero = projects.find((project: Project) => project.data.featured) ?? projects[0];
+const featured = projects.filter((project: Project) => project.data.featured);
+const base = import.meta.env.BASE_URL === "/" ? "/" : `${import.meta.env.BASE_URL}/`;
+---
+<BaseLayout title="Junge Architekt — Architecture Studio" description="Junge Architekt is an architecture and design studio based in Yogyakarta, Indonesia." showLoader>
+  <section class="hero shell">
+    <div class="hero-title">
+      <p class="eyebrow">Architecture studio · Yogyakarta</p>
+      <h1 class="display">Future<br />vernacular.</h1>
+    </div>
+    <a class="hero-image" href={`${base}projects/${hero.id}`} aria-label={`View ${hero.data.title}`}>
+      <Image src={hero.data.cover} alt={hero.data.description} widths={[800, 1280, 1920]} sizes="100vw" loading="eager" />
+      <div><span>{hero.data.title}</span><span>{hero.data.year}</span></div>
+    </a>
+    <p class="intro">We shape spaces around climate, material, and daily life—rooted in Indonesia and designed for what comes next.</p>
+  </section>
+  <section class="work shell section">
+    <header>
+      <p class="eyebrow">01 · Selected work</p>
+      <a class="link-arrow" href={`${base}projects`}>Explore all projects</a>
+    </header>
+    <div class="project-grid">{featured.slice(1).map((project: Project, index: number) => <ProjectCard project={project} index={index + 1} />)}</div>
+  </section>
+  <section class="statement shell section">
+    <p class="eyebrow">02 · Practice</p>
+    <p>Architecture is not an object. It is a framework for light, air, landscape, and the rituals of living.</p>
+    <a class="link-arrow" href={`${base}studio`}>Meet the studio</a>
+  </section>
+</BaseLayout>
+<style>
+  .hero { display: grid; grid-template-columns: repeat(12, 1fr); padding-top: clamp(3rem, 8vw, 8rem); }
+  .hero-title { position: relative; z-index: 2; grid-column: 1 / 12; margin-bottom: -2.2vw; pointer-events: none; }
+  .hero-image { grid-column: 4 / -1; position: relative; color: white; text-decoration: none; aspect-ratio: 16 / 10; overflow: hidden; }
+  .hero-image :global(img) { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+  .hero-image:hover :global(img) { transform: scale(1.02); }
+  .hero-image div { position: absolute; inset: auto 1.25rem 1.25rem; display: flex; justify-content: space-between; font-family: var(--font-meta); font-size: .66rem; letter-spacing: .07em; text-transform: uppercase; }
+  .intro { grid-column: 1 / 4; align-self: end; margin: 0; padding: 2rem 2rem 0 0; font-size: clamp(1.05rem, 1.5vw, 1.4rem); letter-spacing: -.018em; line-height: 1.35; }
+  .work header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 3rem; }
+  .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(3rem, 8vw, 8rem) .5rem; }
+  .statement { border-top: 1px solid var(--line); }
+  .statement > p:not(.eyebrow) { max-width: 68rem; margin: 2rem 0 3rem; font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 6rem); font-weight: 500; line-height: 1; letter-spacing: -.055em; }
+  @media (max-width: 700px) { .hero { display: block; } .hero-title { margin: 0 0 1.5rem; } .hero-image { display: block; aspect-ratio: 4 / 5; } .intro { padding: 2rem 0 0; } .project-grid { grid-template-columns: 1fr; } .work header { display: block; } .work header .link-arrow { margin-top: 1rem; } }
+</style>
